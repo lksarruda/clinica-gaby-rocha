@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Gaby Rocha — Dermatologia Clínica, Estética e Cirúrgica | Consolação, SP</title>
+<meta name="description" content="Consultas dermatológicas detalhistas na Consolação, São Paulo. Botox, preenchimento, Ultraformer MPT, Sculptra, fios de PDO e MMP capilar com a Dra. Gabriela Rocha, CRM 151689-SP · RQE 153417 · Membro da SBD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6EFE4;
+    --paper-deep:#EBDEC7;
+    --ink:#211A13;
+    --ink-soft:#5B5145;
+    --pine:#31463A;
+    --pine-deep:#22332A;
+    --gold:#B9843C;
+    --gold-soft:#D8AD6B;
+    --blush:#E7C0AE;
+    --blush-deep:#CE9678;
+    --line: rgba(33,26,19,0.14);
+    --radius: 2px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--pine);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+
+  h1,h2,h3{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(246,239,228,0.0);
+    transition:background .35s ease, box-shadow .35s ease, border-color .35s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.solid{
+    background:rgba(246,239,228,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:1180px;
+    margin:0 auto;
+    padding:20px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:22px;
+    font-weight:500;
+    letter-spacing:0.01em;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    line-height:1.05;
+  }
+  .logo span{
+    font-family:'IBM Plex Mono', monospace;
+    font-style:normal;
+    font-size:9.5px;
+    letter-spacing:0.22em;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:34px;
+    list-style:none;
+    margin:0;padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:14px;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:3px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    width:0;height:1px;background:var(--gold);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:13px 22px;
+    border-radius:var(--radius);
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--pine);color:var(--paper);}
+  .btn-primary:hover{background:var(--pine-deep);transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--pine);color:var(--pine);transform:translateY(-1px);}
+
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:1px;background:var(--ink);margin:6px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:168px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(34px, 4.4vw, 54px);
+    line-height:1.12;
+    letter-spacing:-0.01em;
+    margin:22px 0 26px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--pine);
+  }
+  .hero p.lead{
+    font-size:17.5px;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:46px;}
+
+  .trust-row{
+    display:flex;
+    gap:0;
+    border-top:1px solid var(--line);
+    padding-top:22px;
+  }
+  .trust-item{
+    flex:1;
+    padding-right:22px;
+    border-right:1px solid var(--line);
+  }
+  .trust-item:last-child{border-right:none;padding-right:0;}
+  .trust-item .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--gold);
+    display:block;
+    margin-bottom:6px;
+    letter-spacing:.04em;
+  }
+  .trust-item .label{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.4;
+  }
+
+  .hero-visual{position:relative;}
+  .hero-frame{
+    position:relative;
+    border:1px solid var(--line);
+    padding:14px;
+    background:var(--paper-deep);
+  }
+  .hero-frame img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    object-position:top center;
+    filter:saturate(0.94) contrast(1.02);
+  }
+  .hero-tag{
+    position:absolute;
+    bottom:-26px;left:-26px;
+    background:var(--pine);
+    color:var(--paper);
+    padding:20px 22px;
+    max-width:250px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    line-height:2;
+    letter-spacing:.02em;
+    box-shadow:0 18px 40px rgba(34,51,42,0.25);
+  }
+  .hero-tag b{color:var(--gold-soft);display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;font-weight:500;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:110px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:64px;
+  }
+  .section-head h2{
+    font-size:clamp(28px,3vw,40px);
+    line-height:1.18;
+    margin-top:18px;
+  }
+  .section-head p{color:var(--ink-soft);margin-top:18px;font-size:16px;}
+  .alt{background:var(--paper-deep);}
+
+  /* ---------- SOBRE ---------- */
+  .sobre-grid{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:72px;
+    align-items:start;
+  }
+  .sobre-card{
+    border:1px solid var(--line);
+    padding:32px;
+    background:var(--paper);
+  }
+  .sobre-card img{width:120px;margin-bottom:22px;}
+  .sobre-card .crm{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--pine);
+    letter-spacing:.05em;
+    border-top:1px solid var(--line);
+    padding-top:16px;
+    margin-top:16px;
+  }
+  .sobre-text p{margin:0 0 20px;color:var(--ink-soft);font-size:16.5px;}
+  .sobre-text p:first-child{
+    font-family:'Newsreader', serif;
+    font-style:italic;
+    font-size:22px;
+    color:var(--ink);
+    line-height:1.5;
+  }
+  .locais{
+    display:flex;
+    gap:14px;
+    margin-top:28px;
+    flex-wrap:wrap;
+  }
+  .local-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.04em;
+    border:1px solid var(--pine);
+    color:var(--pine);
+    padding:9px 16px;
+    border-radius:100px;
+  }
+
+  /* ---------- SERVICOS ---------- */
+  .servicos-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .servico-card{
+    background:var(--paper);
+    padding:38px 34px;
+  }
+  .servico-card .idx{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--gold);
+    letter-spacing:.06em;
+  }
+  .servico-card h3{
+    font-size:23px;
+    margin:16px 0 14px;
+  }
+  .servico-card p.desc{color:var(--ink-soft);font-size:14.5px;margin-bottom:20px;}
+  .servico-card ul{
+    list-style:none;
+    margin:0;padding:0;
+    border-top:1px solid var(--line);
+    padding-top:16px;
+  }
+  .servico-card li{
+    font-size:14.5px;
+    padding:7px 0;
+    color:var(--ink);
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  .servico-card li::before{
+    content:"—";
+    color:var(--gold);
+    font-size:12px;
+  }
+
+  /* ---------- PROCESSO ---------- */
+  .processo-list{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+  }
+  .processo-item{
+    padding:30px 26px 0;
+    border-right:1px solid var(--line);
+  }
+  .processo-item:last-child{border-right:none;}
+  .processo-item .step{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--gold);
+    margin-bottom:14px;
+    display:block;
+  }
+  .processo-item h3{font-size:19px;margin-bottom:10px;}
+  .processo-item p{color:var(--ink-soft);font-size:14.5px;}
+
+  /* ---------- DIAGRAMA (assinatura) ---------- */
+  .diagrama-wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .diagrama-svg{width:100%;height:auto;}
+  .diagrama-copy .section-head{margin-bottom:26px;}
+  .diagrama-list{list-style:none;margin:0;padding:0;}
+  .diagrama-list li{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .diagrama-list li:last-child{border-bottom:1px solid var(--line);}
+  .diagrama-list b{
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:.05em;
+    min-width:118px;
+    display:inline-block;
+    padding-top:2px;
+  }
+
+  /* ---------- VALOR ---------- */
+  .valor-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:36px;
+  }
+  .valor-card .mark{
+    width:38px;height:38px;
+    border:1px solid var(--pine);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--pine);
+    font-family:'Newsreader',serif;
+    font-style:italic;
+    margin-bottom:20px;
+  }
+  .valor-card h3{font-size:18px;margin-bottom:10px;}
+  .valor-card p{color:var(--ink-soft);font-size:14.5px;}
+
+  /* ---------- DEPOIMENTOS ---------- */
+  .depo-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:56px;
+  }
+  .depo-score{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .depo-score .big{
+    font-family:'Newsreader', serif;
+    font-size:52px;
+    color:var(--pine);
+    line-height:1;
+  }
+  .depo-score .meta{font-size:12.5px;color:var(--ink-soft);line-height:1.5;}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:14px;}
+  .depo-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .depo-card{
+    background:var(--paper);
+    padding:32px 30px;
+    display:flex;
+    flex-direction:column;
+  }
+  .depo-card .stars{margin-bottom:16px;}
+  .depo-card p{
+    font-family:'Newsreader', serif;
+    font-size:16.5px;
+    line-height:1.55;
+    color:var(--ink);
+    flex-grow:1;
+    margin:0 0 22px;
+  }
+  .depo-foot{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--line);
+    padding-top:16px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .depo-more{
+    text-align:center;
+    margin-top:40px;
+  }
+  .depo-more a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--pine);
+    border-bottom:1px solid var(--gold);
+    padding-bottom:3px;
+  }
+
+  /* ---------- CTA FAIXA ---------- */
+  .cta-faixa{
+    background:var(--pine);
+    color:var(--paper);
+    padding:90px 0;
+    text-align:center;
+  }
+  .cta-faixa .eyebrow{color:var(--blush);}
+  .cta-faixa .eyebrow::before{background:var(--blush);}
+  .cta-faixa h2{
+    color:var(--paper);
+    font-size:clamp(28px,3.6vw,44px);
+    max-width:720px;
+    margin:20px auto 36px;
+    line-height:1.2;
+  }
+  .cta-faixa .btn-primary{background:var(--paper);color:var(--pine-deep);}
+  .cta-faixa .btn-primary:hover{background:var(--gold-soft);color:var(--pine-deep);}
+  .cta-faixa .btn-ghost{border-color:rgba(246,239,228,.5);color:var(--paper);}
+  .cta-faixa .btn-ghost:hover{border-color:var(--paper);}
+  .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- LOCALIZACAO ---------- */
+  .local-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border:1px solid var(--line);
+  }
+  .local-info{padding:52px;}
+  .local-info h3{font-size:15px;font-family:'IBM Plex Mono', monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--pine);margin-bottom:10px;font-weight:500;}
+  .local-info .addr{font-family:'Newsreader',serif;font-size:24px;margin-bottom:30px;line-height:1.4;}
+  .info-line{display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid var(--line);font-size:14.5px;}
+  .info-line:last-of-type{border-bottom:1px solid var(--line);margin-bottom:30px;}
+  .info-line span:first-child{color:var(--ink-soft);}
+  .info-line span:last-child{font-family:'IBM Plex Mono', monospace;font-size:13px;}
+  .map-frame iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(0.35) contrast(1.05);}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:60px 0 34px;
+    border-top:1px solid var(--line);
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-bottom:40px;
+  }
+  .footer-links{display:flex;gap:36px;flex-wrap:wrap;}
+  .footer-links a{text-decoration:none;font-size:14px;color:var(--ink-soft);}
+  .footer-links a:hover{color:var(--pine);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{
+    position:fixed;
+    bottom:26px;right:26px;
+    z-index:90;
+    background:var(--pine);
+    color:var(--paper);
+    width:58px;height:58px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px rgba(34,51,42,0.35);
+    text-decoration:none;
+    transition:transform .2s ease;
+  }
+  .wa-float:hover{transform:scale(1.07);}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .hero-frame img{height:360px;}
+    .sobre-grid{grid-template-columns:1fr;gap:40px;}
+    .servicos-grid{grid-template-columns:1fr;}
+    .depo-grid{grid-template-columns:1fr;}
+    .depo-head{align-items:flex-start;}
+    .processo-list{grid-template-columns:1fr 1fr;}
+    .processo-item{border-right:none;border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:0;}
+    .diagrama-wrap{grid-template-columns:1fr;}
+    .valor-grid{grid-template-columns:1fr 1fr;}
+    .local-grid{grid-template-columns:1fr;}
+    .map-frame iframe{min-height:300px;}
+    .trust-row{flex-direction:column;gap:16px;}
+    .trust-item{border-right:none;padding-right:0;}
+  }
+  @media (max-width: 720px){
+    .nav-links, .nav-cta .btn-ghost{display:none;}
+    .burger{display:block;}
+    .container{padding:0 22px;}
+    .hero{padding:130px 0 70px;}
+    .hero-tag{position:static;margin-top:18px;max-width:none;}
+    .processo-list{grid-template-columns:1fr;}
+    .valor-grid{grid-template-columns:1fr;}
+    section{padding:76px 0;}
+    .local-info{padding:34px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav>
+    <a href="#top" class="logo">Dra. Gaby Rocha<span>DERMATOLOGIA · SÃO PAULO</span></a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Especialidades</a></li>
+      <li><a href="#consulta">A consulta</a></li>
+      <li><a href="#depoimentos">Avaliações</a></li>
+      <li><a href="#local">Localização</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://www.instagram.com/dra.gabyrocha/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-primary" href="https://wa.me/5511989250836?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Dra.%20Gaby%20Rocha." target="_blank" rel="noopener">Agendar consulta</a>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">CRM 151689‑SP · RQE 153417 · Consolação, São Paulo</span>
+        <h1>Uma consulta pensada para <em>ler cada camada</em> da sua pele — não só a superfície.</h1>
+        <p class="lead">Dermatologia clínica, estética e cirúrgica com a Dra. Gabriela Rocha. Anamnese detalhista, diagnóstico cuidadoso e planos de tratamento individuais para pele, cabelo e unhas.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/5511989250836?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Dra.%20Gaby%20Rocha." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+          <a class="btn btn-ghost" href="#servicos">Ver especialidades</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item"><span class="num">01</span><span class="label">Consultas detalhistas — sem pressa, com escuta real</span></div>
+          <div class="trust-item"><span class="num">02</span><span class="label">Membro da Sociedade Brasileira de Dermatologia (SBD)</span></div>
+          <div class="trust-item"><span class="num">03</span><span class="label">Clínica, estética e cirúrgica sob o mesmo cuidado</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-frame">
+          <img src="assets/dra-gaby-foto.jpg" alt="Dra. Gabriela Rocha, dermatologista">
+        </div>
+        <div class="hero-tag">
+          <b>Procedimentos</b>
+          Toxina botulínica · Preenchimento · Ultraformer MPT · Sculptra · Fios de PDO · MMP Capilar
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="alt">
+    <div class="container sobre-grid">
+      <div class="reveal">
+        <div class="sobre-card">
+          <img src="https://img1.wsimg.com/isteam/ip/94893b54-6fec-4e89-88c7-bae8d8cf854d/logotipo_clinica_dra-gaby-01.jpg" alt="Logotipo Clínica Dra. Gaby Rocha">
+          <p style="margin:0 0 4px;font-family:'Newsreader',serif;font-size:20px;">Dra. Gabriela Rocha</p>
+          <p style="margin:0;color:var(--ink-soft);font-size:14.5px;">Médica dermatologista</p>
+          <div class="crm">CRM 151689‑SP · RQE 153417</div>
+        </div>
+        <div class="locais">
+          <span class="local-pill">São Paulo · Consolação</span>
+          <span class="local-pill">Membro da SBD</span>
+        </div>
+      </div>
+
+      <div class="reveal sobre-text">
+        <span class="eyebrow">Sobre a clínica</span>
+        <p>Cuidar da pele é um exercício de atenção — e é assim que cada consulta é conduzida aqui.</p>
+        <p>A Clínica Dra. Gaby Rocha nasceu para oferecer um atendimento dermatológico completo, sem pressa e sem generalizações: cada consulta é conduzida com investigação detalhada da história do paciente e exame cuidadoso da pele, dos cabelos e das unhas antes de qualquer indicação de tratamento.</p>
+        <p>A Dra. Gabriela Rocha atua nas três frentes da dermatologia — clínica, estética e cirúrgica — o que permite acompanhar o paciente de forma contínua: da saúde da pele à estética, sem precisar transitar entre profissionais diferentes para cada etapa do cuidado.</p>
+        <p>Os atendimentos acontecem no consultório da Rua Frei Caneca, na Consolação, região central e de fácil acesso em São Paulo. A Dra. Gabriela Rocha é membro da Sociedade Brasileira de Dermatologia (SBD), CRM 151689‑SP, RQE 153417.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICOS -->
+  <section id="servicos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Especialidades</span>
+        <h2>Três frentes de cuidado, uma só linha de raciocínio clínico.</h2>
+        <p>A divisão abaixo organiza o que é tratado em cada frente — mas, na prática, elas conversam entre si dentro de um mesmo plano de cuidado.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="servicos-grid reveal">
+        <div class="servico-card">
+          <span class="idx">01 — Clínica</span>
+          <h3>Saúde da pele, cabelo e unhas</h3>
+          <p class="desc">Diagnóstico e tratamento de condições dermatológicas, com investigação detalhada antes de qualquer conduta.</p>
+          <ul>
+            <li>Avaliação de pele, cabelo e unhas</li>
+            <li>Acompanhamento de lesões e manchas</li>
+            <li>Investigação de queda capilar</li>
+            <li>Rotina de cuidados personalizada</li>
+          </ul>
+        </div>
+        <div class="servico-card">
+          <span class="idx">02 — Estética</span>
+          <h3>Procedimentos com indicação médica</h3>
+          <p class="desc">Técnicas de harmonização e rejuvenescimento, sempre precedidas de avaliação individual.</p>
+          <ul>
+            <li>Toxina botulínica (botox)</li>
+            <li>Preenchimento facial</li>
+            <li>Ultraformer MPT</li>
+            <li>Sculptra</li>
+            <li>Fios de PDO</li>
+            <li>MMP Capilar</li>
+          </ul>
+        </div>
+        <div class="servico-card">
+          <span class="idx">03 — Cirúrgica</span>
+          <h3>Pequenos procedimentos dermatológicos</h3>
+          <p class="desc">Avaliação e condução cirúrgica de lesões de pele, dentro do mesmo acompanhamento clínico.</p>
+          <ul>
+            <li>Avaliação de lesões de pele</li>
+            <li>Procedimentos ambulatoriais</li>
+            <li>Encaminhamento e acompanhamento pós-procedimento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section id="consulta" class="alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Como funciona</span>
+        <h2>O que muda quando a consulta é, de fato, detalhista.</h2>
+        <p>Antes de qualquer indicação — clínica ou estética — o caminho é sempre o mesmo.</p>
+      </div>
+      <div class="processo-list reveal">
+        <div class="processo-item">
+          <span class="step">01</span>
+          <h3>Anamnese</h3>
+          <p>Histórico de saúde, rotina de cuidados e queixa atual, ouvidos com calma antes do exame.</p>
+        </div>
+        <div class="processo-item">
+          <span class="step">02</span>
+          <h3>Exame minucioso</h3>
+          <p>Avaliação detalhada da pele, do couro cabeludo e das unhas, ponto por ponto.</p>
+        </div>
+        <div class="processo-item">
+          <span class="step">03</span>
+          <h3>Diagnóstico e plano</h3>
+          <p>Conduta explicada com clareza, considerando alternativas clínicas e estéticas quando cabível.</p>
+        </div>
+        <div class="processo-item">
+          <span class="step">04</span>
+          <h3>Acompanhamento</h3>
+          <p>Retorno e ajustes ao longo do tratamento — o cuidado não termina na saída do consultório.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGRAMA / ASSINATURA -->
+  <section>
+    <div class="container diagrama-wrap">
+      <div class="reveal">
+        <svg class="diagrama-svg" viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração esquemática das camadas da pele">
+          <rect x="0" y="0" width="560" height="460" fill="none"/>
+          <!-- hipoderme -->
+          <path d="M0,360 C90,335 170,385 260,355 C350,325 430,375 560,345 L560,460 L0,460 Z" fill="#EBDEC7"/>
+          <!-- derme -->
+          <path d="M0,255 C80,225 180,270 280,240 C380,210 460,255 560,225 L560,360 C430,375 350,325 260,355 C170,385 90,335 0,360 Z" fill="#E7C0AE"/>
+          <!-- epiderme -->
+          <path d="M0,150 C90,120 190,165 290,135 C390,105 470,150 560,120 L560,225 C460,255 380,210 280,240 C180,270 80,225 0,255 Z" fill="#31463A"/>
+          <!-- superficie -->
+          <path d="M0,150 C90,120 190,165 290,135 C390,105 470,150 560,120 L560,96 C470,126 390,81 290,111 C190,141 90,96 0,126 Z" fill="#22332A"/>
+
+          <!-- leader lines + labels -->
+          <line x1="150" y1="108" x2="60" y2="60" stroke="#B9843C" stroke-width="1"/>
+          <circle cx="150" cy="108" r="3.5" fill="#B9843C"/>
+          <text x="30" y="46" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="0.5" fill="#211A13">EPIDERME</text>
+
+          <line x1="330" y1="255" x2="440" y2="200" stroke="#B9843C" stroke-width="1"/>
+          <circle cx="330" cy="255" r="3.5" fill="#B9843C"/>
+          <text x="446" y="196" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="0.5" fill="#211A13">DERME</text>
+
+          <line x1="200" y1="400" x2="90" y2="430" stroke="#B9843C" stroke-width="1"/>
+          <circle cx="200" cy="400" r="3.5" fill="#B9843C"/>
+          <text x="20" y="450" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="0.5" fill="#211A13">HIPODERME</text>
+
+          <!-- lupa -->
+          <circle cx="430" cy="90" r="46" fill="none" stroke="#211A13" stroke-width="1.5"/>
+          <line x1="463" y1="123" x2="500" y2="160" stroke="#211A13" stroke-width="6" stroke-linecap="round"/>
+          <line x1="404" y1="90" x2="456" y2="90" stroke="#211A13" stroke-width="1"/>
+          <line x1="430" y1="64" x2="430" y2="116" stroke="#211A13" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="reveal diagrama-copy">
+        <div class="section-head">
+          <span class="eyebrow">A filosofia</span>
+          <h2>Detalhe é diagnóstico.</h2>
+          <p>Cada camada da pele conta uma parte diferente da história do paciente. É por isso que a consulta não pula etapas — mesmo quando o objetivo é puramente estético.</p>
+        </div>
+        <ul class="diagrama-list">
+          <li><b>SUPERFÍCIE</b> Rotina, hábitos de exposição solar e uso de produtos entram na conversa antes do exame.</li>
+          <li><b>PROFUNDIDADE</b> A escolha entre um procedimento estético e outro considera estrutura, não só resultado visual.</li>
+          <li><b>CONTINUIDADE</b> Clínica e estética compartilham o mesmo prontuário — e o mesmo raciocínio.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALOR -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Por que a clínica</span>
+        <h2>O que diferencia o atendimento aqui.</h2>
+      </div>
+      <div class="valor-grid reveal">
+        <div class="valor-card">
+          <div class="mark">i</div>
+          <h3>Consulta sem pressa</h3>
+          <p>Tempo dedicado à escuta e ao exame, antes de qualquer indicação.</p>
+        </div>
+        <div class="valor-card">
+          <div class="mark">ii</div>
+          <h3>Duas frentes, um plano</h3>
+          <p>Clínica e estética conduzidas pela mesma médica, com histórico contínuo.</p>
+        </div>
+        <div class="valor-card">
+          <div class="mark">iii</div>
+          <h3>Tecnologia com critério</h3>
+          <p>Ultraformer MPT, Sculptra e fios de PDO indicados conforme avaliação — não por padrão.</p>
+        </div>
+        <div class="valor-card">
+          <div class="mark">iv</div>
+          <h3>Respaldo da SBD</h3>
+          <p>Membro da Sociedade Brasileira de Dermatologia, com registro de especialista RQE 153417.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <!-- DEPOIMENTOS (reais, extraídos do Google, fornecidos pela cliente) -->
+  <section id="depoimentos" class="alt">
+    <div class="container">
+      <div class="depo-head reveal">
+        <div>
+          <span class="eyebrow">Avaliações no Google</span>
+          <h2 style="margin-top:18px;font-size:clamp(26px,3vw,36px);">O que dizem as pacientes atendidas.</h2>
+        </div>
+        <div class="depo-score">
+          <span class="stars" style="font-size:20px;">★★★★★</span>
+          <span class="meta">32 avaliações<br>no Google</span>
+        </div>
+      </div>
+
+      <div class="depo-grid reveal">
+        <div class="depo-card">
+          <span class="stars">★★★★★</span>
+          <p>"A Dra Gaby é incrível! Durante a consulta faz questão de me ouvir e entender minhas dores com muito carinho. Com seu olhar especializado, dá sugestões e faz considerações importantes, sempre prezando pela naturalidade nos procedimentos — algo que amo! Sou sua fiel paciente, confio de olhos fechados."</p>
+          <div class="depo-foot"><span>Amélia Nascimento</span><span>mai. 2024</span></div>
+        </div>
+        <div class="depo-card">
+          <span class="stars">★★★★★</span>
+          <p>"A Gaby é uma excelente profissional, examina o paciente minuciosamente. A consulta é maravilhosa, você percebe que realmente está saindo com seu tratamento completo e coerente. Recomendo!"</p>
+          <div class="depo-foot"><span>Marcela Ervilha</span><span>mai. 2024</span></div>
+        </div>
+        <div class="depo-card">
+          <span class="stars">★★★★★</span>
+          <p>"A Dra. Gaby está realizando o tratamento da minha foliculite e estou tendo resultados excelentes. Já tinha tentado com vários outros dermatologistas e nunca obtive êxito. Estou muito feliz com os resultados e com o nosso progresso no tratamento."</p>
+          <div class="depo-foot"><span>Wallace Alencar</span><span>mai. 2024</span></div>
+        </div>
+        <div class="depo-card">
+          <span class="stars">★★★★★</span>
+          <p>"Incrível! Super recomendo. A médica mais atenciosa que já fui na vida."</p>
+          <div class="depo-foot"><span>Lud Cabral</span><span>mai. 2024</span></div>
+        </div>
+      </div>
+
+      <div class="depo-more">
+        <a href="https://www.google.com/search?q=Cl%C3%ADnica+Dra+Gaby+Rocha+Frei+Caneca+avalia%C3%A7%C3%B5es" target="_blank" rel="noopener">Ver todas as avaliações no Google →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FAIXA -->
+  <section class="cta-faixa">
+    <div class="container">
+      <span class="eyebrow">Agende sua consulta</span>
+      <h2>O primeiro passo é uma conversa detalhada sobre a sua pele.</h2>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/5511989250836?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Dra.%20Gaby%20Rocha." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/dra.gabyrocha/" target="_blank" rel="noopener">Seguir no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZACAO -->
+  <section id="local">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Localização</span>
+        <h2>Consultório na Consolação, no centro de São Paulo.</h2>
+      </div>
+      <div class="local-grid reveal">
+        <div class="local-info">
+          <h3>Endereço</h3>
+          <p class="addr">Rua Frei Caneca, 558<br>Consolação — São Paulo, SP<br>01307‑000</p>
+          <div class="info-line"><span>Telefone / WhatsApp</span><span>11 98925‑0836</span></div>
+          <div class="info-line"><span>Atendimento</span><span>Seg–Sex · 09h–19h</span></div>
+          <div class="info-line"><span>Registro</span><span>CRM 151689‑SP · RQE 153417</span></div>
+          <a class="btn btn-primary" href="https://wa.me/5511989250836?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Dra.%20Gaby%20Rocha." target="_blank" rel="noopener">Agendar horário</a>
+        </div>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=Rua+Frei+Caneca,+558,+Consola%C3%A7%C3%A3o,+S%C3%A3o+Paulo+-+SP,+01307-000&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da Clínica Dra. Gaby Rocha"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <a href="#top" class="logo">Dra. Gaby Rocha<span>DERMATOLOGIA · SÃO PAULO</span></a>
+      <div class="footer-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Especialidades</a>
+        <a href="#consulta">A consulta</a>
+        <a href="#local">Localização</a>
+        <a href="https://www.instagram.com/dra.gabyrocha/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Clínica Dra. Gaby Rocha — CRM 151689‑SP · RQE 153417 · Membro da SBD</span>
+      <span>Rua Frei Caneca, 558, Consolação, São Paulo — SP</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5511989250836?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20na%20Cl%C3%ADnica%20Dra.%20Gaby%20Rocha." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.2-1.1a7.9 7.9 0 0 0 3.85 1h.01a7.94 7.94 0 0 0 5.54-13.58ZM12.06 18.4h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.65.67-2.44-.16-.25a6.6 6.6 0 1 1 5.6 3.1Zm3.6-4.94c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.19-.5.64-.62.78-.11.13-.23.15-.43.05a5.4 5.4 0 0 1-1.6-.99 6 6 0 0 1-1.1-1.37c-.12-.2 0-.3.09-.4.09-.1.2-.24.3-.36.1-.12.13-.2.2-.34.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33h-.38c-.13 0-.34.05-.52.24-.18.19-.68.67-.68 1.63s.7 1.9.79 2.03c.1.13 1.37 2.09 3.32 2.93.46.2.83.32 1.11.41.47.15.9.13 1.24.08.38-.06 1.17-.48 1.33-.94.16-.46.16-.86.11-.94-.05-.08-.18-.13-.38-.23Z" fill="currentColor"/>
+  </svg>
+</a>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('solid', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'fixed';
+    navLinks.style.top = '78px';
+    navLinks.style.right = '22px';
+    navLinks.style.background = '#F6EFE4';
+    navLinks.style.border = '1px solid rgba(33,26,19,0.14)';
+    navLinks.style.padding = '18px 26px';
+    navLinks.style.gap = '16px';
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
