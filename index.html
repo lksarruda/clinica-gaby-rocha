@@ -99,10 +99,21 @@
     letter-spacing:0.01em;
     text-decoration:none;
     display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .logo-img{
+    height:38px;
+    width:auto;
+    display:block;
+    border-radius:2px;
+  }
+  .logo-text{
+    display:flex;
     flex-direction:column;
     line-height:1.05;
   }
-  .logo span{
+  .logo-text span{
     font-family:'IBM Plex Mono', monospace;
     font-style:normal;
     font-size:9.5px;
@@ -264,10 +275,18 @@
   }
   .sobre-card{
     border:1px solid var(--line);
-    padding:32px;
     background:var(--paper);
+    overflow:hidden;
   }
-  .sobre-card img{width:120px;margin-bottom:22px;}
+  .sobre-photo{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    object-position:top center;
+    display:block;
+    filter:saturate(0.95) contrast(1.02);
+  }
+  .sobre-card-body{padding:26px 30px 30px;}
   .sobre-card .crm{
     font-family:'IBM Plex Mono', monospace;
     font-size:12px;
@@ -342,38 +361,6 @@
     content:"—";
     color:var(--gold);
     font-size:12px;
-  }
-
-  /* ---------- PROCEDIMENTOS DETALHE ---------- */
-  .proc-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .proc-card{
-    background:var(--paper);
-    display:flex;
-    flex-direction:column;
-  }
-  .proc-img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    filter:saturate(0.92) contrast(1.02);
-  }
-  .proc-body{padding:26px 26px 30px;}
-  .proc-body .eyebrow{font-size:11px;margin-bottom:12px;}
-  .proc-body h3{font-size:19px;margin-bottom:10px;line-height:1.25;}
-  .proc-body p{color:var(--ink-soft);font-size:14px;margin:0;}
-  .proc-credit{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:10px;
-    color:var(--ink-soft);
-    opacity:0.55;
-    text-align:center;
-    margin-top:18px;
   }
 
   /* ---------- PROCEDIMENTOS EM DETALHE ---------- */
@@ -651,6 +638,7 @@
     .hero-visual{order:-1;}
     .hero-frame img{height:360px;}
     .sobre-grid{grid-template-columns:1fr;gap:40px;}
+    .sobre-photo{height:320px;}
     .servicos-grid{grid-template-columns:1fr;}
     .proc-grid{grid-template-columns:1fr;}
     .depo-grid{grid-template-columns:1fr;}
@@ -681,7 +669,10 @@
 
 <header id="siteHeader">
   <nav>
-    <a href="#top" class="logo">Dra. Gaby Rocha<span>DERMATOLOGIA · SÃO PAULO</span></a>
+    <a href="#top" class="logo">
+      <img class="logo-img" src="https://img1.wsimg.com/isteam/ip/94893b54-6fec-4e89-88c7-bae8d8cf854d/logotipo_clinica_dra-gaby-01.jpg" alt="Logotipo Clínica Dra. Gaby Rocha">
+      <span class="logo-text">Dra. Gaby Rocha<span>DERMATOLOGIA · SÃO PAULO</span></span>
+    </a>
     <ul class="nav-links">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Especialidades</a></li>
@@ -724,7 +715,7 @@
         </div>
         <div class="hero-tag">
           <b>Procedimentos</b>
-          Toxina botulínica · Preenchimento · Ultraformer MPT · Sculptra · Fios de PDO · MMP Capilar
+          Toxina botulínica · Preenchimento · Ultraformer MPT · Sculptra · Bioestimulador · Peeling · Fios de PDO · MMP Capilar
         </div>
       </div>
     </div>
@@ -735,10 +726,12 @@
     <div class="container sobre-grid">
       <div class="reveal">
         <div class="sobre-card">
-          <img src="https://img1.wsimg.com/isteam/ip/94893b54-6fec-4e89-88c7-bae8d8cf854d/logotipo_clinica_dra-gaby-01.jpg" alt="Logotipo Clínica Dra. Gaby Rocha">
-          <p style="margin:0 0 4px;font-family:'Newsreader',serif;font-size:20px;">Dra. Gabriela Rocha</p>
-          <p style="margin:0;color:var(--ink-soft);font-size:14.5px;">Médica dermatologista</p>
-          <div class="crm">CRM 151689‑SP · RQE 153417</div>
+          <img class="sobre-photo" src="assets/dra-gaby-sobre.jpg" alt="Dra. Gabriela Rocha, dermatologista">
+          <div class="sobre-card-body">
+            <p style="margin:0 0 4px;font-family:'Newsreader',serif;font-size:20px;">Dra. Gabriela Rocha</p>
+            <p style="margin:0;color:var(--ink-soft);font-size:14.5px;">Médica dermatologista</p>
+            <div class="crm">CRM 151689‑SP · RQE 153417</div>
+          </div>
         </div>
         <div class="locais">
           <span class="local-pill">São Paulo · Consolação</span>
@@ -787,6 +780,8 @@
             <li>Preenchimento facial</li>
             <li>Ultraformer MPT</li>
             <li>Sculptra</li>
+            <li>Bioestimulador de colágeno</li>
+            <li>Peeling</li>
             <li>Fios de PDO</li>
             <li>MMP Capilar</li>
           </ul>
@@ -825,7 +820,7 @@
         </div>
 
         <div class="proc-card">
-          <img class="proc-img" src="https://images.pexels.com/photos/7446659/pexels-photo-7446659.jpeg?cs=srgb&fm=jpg&w=800" alt="Aplicação de procedimento facial em clínica" loading="lazy">
+          <img class="proc-img" src="assets/preenchimento.jpg" alt="Aplicação de preenchimento facial pela Dra. Gaby Rocha" loading="lazy">
           <div class="proc-body">
             <span class="idx">Ácido hialurônico</span>
             <h3>Preenchimento facial</h3>
@@ -834,7 +829,7 @@
         </div>
 
         <div class="proc-card">
-          <img class="proc-img" src="https://images.pexels.com/photos/3865548/pexels-photo-3865548.jpeg?cs=srgb&fm=jpg&w=800" alt="Tratamento facial com tecnologia" loading="lazy">
+          <img class="proc-img" src="assets/ultraformer.jpg" alt="Aplicação de Ultraformer MPT pela Dra. Gaby Rocha" loading="lazy">
           <div class="proc-body">
             <span class="idx">Ultrassom microfocado</span>
             <h3>Ultraformer MPT</h3>
@@ -845,7 +840,7 @@
         <div class="proc-card">
           <img class="proc-img" src="https://images.pexels.com/photos/6810869/pexels-photo-6810869.jpeg?cs=srgb&fm=jpg&w=800" alt="Cuidado com a pele do rosto" loading="lazy">
           <div class="proc-body">
-            <span class="idx">Bioestimulador de colágeno</span>
+            <span class="idx">Rejuvenescimento progressivo</span>
             <h3>Sculptra</h3>
             <p>Atua de forma gradual, estimulando a própria pele a se reconstruir por dentro — indicado para quem busca um rejuvenescimento progressivo e discreto ao longo dos meses.</p>
           </div>
@@ -861,15 +856,32 @@
         </div>
 
         <div class="proc-card">
-          <img class="proc-img" src="https://images.pexels.com/photos/28994388/pexels-photo-28994388.jpeg?cs=srgb&fm=jpg&w=800" alt="Aplicação de produto no couro cabeludo" loading="lazy">
+          <img class="proc-img" src="assets/mmp-capilar.jpg" alt="Aplicação de MMP Capilar pela Dra. Gaby Rocha" loading="lazy">
           <div class="proc-body">
             <span class="idx">Protocolo capilar</span>
             <h3>MMP Capilar</h3>
             <p>Atua diretamente no couro cabeludo para auxiliar no combate à queda e no fortalecimento dos fios, sempre após investigação da causa por trás da queda capilar.</p>
           </div>
         </div>
+        <div class="proc-card">
+          <img class="proc-img" src="https://images.pexels.com/photos/7581075/pexels-photo-7581075.jpeg?cs=srgb&fm=jpg&w=800" alt="Procedimento estético em clínica" loading="lazy">
+          <div class="proc-body">
+            <span class="idx">Bioestimulador de colágeno</span>
+            <h3>Bioestimulador</h3>
+            <p>Estimula a produção natural de colágeno na pele, promovendo firmeza e viço de forma gradual — indicado para flacidez leve a moderada e prevenção do envelhecimento.</p>
+          </div>
+        </div>
+
+        <div class="proc-card">
+          <img class="proc-img" src="https://images.pexels.com/photos/6663439/pexels-photo-6663439.jpeg?cs=srgb&fm=jpg&w=800" alt="Cuidado e renovação da pele do rosto" loading="lazy">
+          <div class="proc-body">
+            <span class="idx">Renovação da pele</span>
+            <h3>Peeling</h3>
+            <p>Renova a camada superficial da pele, uniformizando textura e tom, e ajudando a atenuar manchas e poros dilatados — com protocolo ajustado ao tipo de pele de cada paciente.</p>
+          </div>
+        </div>
       </div>
-      <p class="proc-credit">Fotos ilustrativas (banco de imagens gratuito) — não retratam pacientes ou o ambiente real da clínica.</p>
+      <p class="proc-credit">Preenchimento, Ultraformer MPT e MMP Capilar: fotos reais da Dra. Gaby Rocha. Demais procedimentos: fotos ilustrativas de banco de imagens gratuito.</p>
     </div>
   </section>
 
